@@ -36,6 +36,8 @@
       <div class="navbar-inner">
         <ul class="nav">
           <li {% if navbar == 'home' %}  class="active" {% endif %}  ><a href="{{url_for('home')}}">Home</a></li>
+          <li {% if navbar == 'topline' %}  class="active" {% endif %}  ><a href="{{url_for('topline')}}">Topline</a></li>
+          <li {% if navbar == 'sales' %}  class="active" {% endif %}  ><a href="{{url_for('sales')}}">Sales</a></li>
         </ul>
       </div>
     </div>
@@ -51,6 +53,8 @@
   <script src="{{url_for('static', filename='js/jquery-1.9.1.min.js')}}"</script>
   <script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
   <script src="{{url_for('static', filename='js/bootstrap-alert.js')}}"></script>
-  <script src="{{url_for('static', filename='js/home.js')}}"></script>
+  <script src="{{url_for('static', filename='js/dragdrop.js')}}"></script>
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   {% endblock %}
 </body>

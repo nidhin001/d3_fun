@@ -2,3 +2,7 @@
   text-align: center;
 }
 
+.plot.over {
+  border: 2px dashed #000;
+}
+

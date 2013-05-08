@@ -11,6 +11,18 @@ app.config.from_object(__name__)
 def home():
   return render_template('home.html', navbar = 'home')
 
+@app.route('/topline')
+def topline():
+  return render_template('topline.html', navbar = 'topline')
+
+
+@app.route('/sales')
+def sales():
+  return render_template('sales.html', navbar = 'sales')
+
+
+
+
 @app.route('/_data')
 def data():
   
