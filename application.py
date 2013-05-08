@@ -9,7 +9,8 @@ app.config.from_object(__name__)
 
 @app.route('/')
 def home():
-  return render_template('home.html', navbar = 'home')
+
+  return render_template('home.html', navbar = 'home', plot_data = plots)
 
 @app.route('/topline')
 def topline():
