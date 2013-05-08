@@ -3,7 +3,7 @@ from database import Base
 import datetime
 
 class Plot(Base):
-  __tablename__ = 'web_users'
+  __tablename__ = 'plots'
   id = Column(Integer, primary_key=True)
   title = Column(String(80))
   xlabel = Column(String(80))
@@ -20,6 +20,11 @@ class Plot(Base):
     self.num_series = num_series
     self.created_at = datetime.datetime.utcnow()
 
+  def query(self, db_session):
+    res = db_session.execute(self.query)
+    data=res.fetchall()
+    return data
+
   def __repr__(self):
-    return '<User %r>' % self.id
+    return '<plot %r>' % self.id
 
