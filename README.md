@@ -1,7 +1,8 @@
 d3_fun
 ======
 
-fun with d3 for analytics.
-ORM-avoidant intentionally for fully custom SQL.
-D3 to make ajax calls to separately maintained analytics tables. Why? Queries need to be precomputed for performance.
+fun with nvd3 for analytics.
+basically just wrapping nvd3 charting library with configurable sql plot objects.
+result is draggable, droppable easy to use business dashboards with d3's customizability
+but a reuseable, lightweight api.
 
