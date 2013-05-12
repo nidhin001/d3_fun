@@ -4,6 +4,14 @@
 <head>
   {% block head %}
     {{super()}}
+    <!--For each plot, call the relevant plot function -->
+    {% for plot in plots %} 
+      <script>
+        var {{ 'plot' ~ (loop.index+1) ~ 'data'  }} = {{ plot.data }}
+
+      </script>  
+  {% endfor %}
+  
   {% endblock %}
 </head>
 <body>
@@ -21,7 +29,9 @@
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="plot span4" draggable="true">
-      <div id="plot1"> </div>
+      <div id="plot1"> 
+        <svg style="height: 200px; "></svg>
+      </div> 
       <button class="btn btn-info"> Show SQL</button>
       <code class="prettyprint">this is plot1; </code>
     </div>
@@ -73,6 +83,7 @@
 
   {% block footer %}
     {{super()}}
+    <script src="{{url_for('static', filename='js/my_charts.js')}}"></script>
   {% endblock %}
 
 </body>

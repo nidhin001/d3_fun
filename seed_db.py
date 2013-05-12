@@ -6,42 +6,67 @@ p1 = Plot(
     xlabel='xvar',
     ylabel='yvar',
     query='select a,b from data',
-    num_series=1
+    num_series=1,
+    page='home',
+    graph_type='line',
+    xvar='a',
+    yvars='x,y,z'
     )
+
 p2 = Plot(
     title='Plot 1',
     xlabel='xvar',
     ylabel='yvar',
     query='select a,b from data',
-    num_series=1
+    num_series=1,
+    page='home',
+    graph_type='line',
+    xvar='a',
+    yvars='x,y,z'
     )
 p3 = Plot(
     title='Plot 1',
     xlabel='xvar',
     ylabel='yvar',
     query='select a,b from data',
-    num_series=1
+    num_series=1,
+    page='home',
+    graph_type='line',
+    xvar='a',
+    yvars='x,y,z'
     )
 p4 = Plot(
     title='Plot 1',
     xlabel='xvar',
     ylabel='yvar',
     query='select a,b from data',
-    num_series=1
+    num_series=1,
+    page='home',
+    graph_type='line',
+    xvar='a',
+    yvars='x,y,z'
     )
 p5 = Plot(
     title='Plot 1',
     xlabel='xvar',
     ylabel='yvar',
     query='select a,b from data',
-    num_series=1
+    num_series=1,
+    page='home',
+    graph_type='line',
+    xvar='a',
+    yvars='x,y,z'
     )
 p6 = Plot(
     title='Plot 1',
     xlabel='xvar',
     ylabel='yvar',
     query='select a,b from data',
-    num_series=1
+    num_series=1,
+    page='home',
+    graph_type='line',
+    xvar='a',
+    yvars='x,y,z'
     )
 
 
@@ -49,8 +74,8 @@ p6 = Plot(
 
 def seed_db():
   db_session.execute('''CREATE TABLE data 
-    (a:integer, b:integer, c:integer, 
-    x:integer , y:integer , z:integer) ''')
+    (a int, b int, c int, 
+    x int , y int , z int) ''')
   db_session.execute('''INSERT INTO data VALUES (1,2,3,4,5,6)  ''')
   db_session.execute('''INSERT INTO data VALUES (2,2,3,6,5,10)  ''')
   db_session.execute('''INSERT INTO data VALUES (3,3,3,9,5,12)  ''')

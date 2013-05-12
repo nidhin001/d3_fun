@@ -22,6 +22,7 @@
       <link href="{{url_for('static', filename='css/splash.css')}}" rel="stylesheet" type="text/css">
       <link href="{{url_for('static', filename='css/navbar.css')}}" rel="stylesheet" type="text/css">
       <link href="{{url_for('static', filename='css/tag-icons.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{url_for('static', filename='css/nv.d3.css')}}" rel="stylesheet" type="text/css">
     <!-- end: CSS -->
         
     <script type=text/javascript>
@@ -54,9 +55,15 @@
   <script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
   <script src="{{url_for('static', filename='js/bootstrap-alert.js')}}"></script>
   <script src="{{url_for('static', filename='js/dragdrop.js')}}"></script>
-  <script src="{{url_for('static', filename='js/d3.v3.min.js')}}"></script>
-  <script src="{{url_for('static', filename='js/plots.js')}}"></script>
+  <script src="http://d3js.org/d3.v2.min.js" charset="utf-8"></script>
+  <script src="{{url_for('static', filename='js/nv.d3.min.js')}}"></script>
   <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js></script>
-  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="{{url_for('static', filename='js/tooltip.js')}}"></script>
+  <script src="{{url_for('static', filename='js/utils.js')}}"></script>
+  <script src="{{url_for('static', filename='js/legend.js')}}"></script>
+  <script src="{{url_for('static', filename='js/axis.js')}}"></script>
+  <script src="{{url_for('static', filename='js/line.js')}}"></script>
+  <script src="{{url_for('static', filename='js/lineChart.js')}}"></script>
+
   {% endblock %}
 </body>
