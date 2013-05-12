@@ -1,23 +1,3 @@
-nv.addGraph(function() {  
-  var chart = nv.models.lineChart();
-
-  chart.xAxis
-      .axisLabel('Time (ms)')
-      .tickFormat(d3.format(',r'));
-
-  chart.yAxis
-      .axisLabel('Voltage (v)')
-      .tickFormat(d3.format('.02f'));
-
-  d3.select('#plot1 svg')
-      .datum(sinAndCos())
-    .transition().duration(500)
-      .call(chart);
-
-  nv.utils.windowResize(function() { d3.select('#plot1 svg').call(chart) });
-
-  return chart;
-});
 
 
 
@@ -25,7 +5,6 @@ nv.addGraph(function() {
 /**************************************
  * Simple test data generator
  */
-
 
 function sinAndCos() {
   var sin = [],
@@ -49,3 +28,4 @@ function sinAndCos() {
     }
   ];
 }
+

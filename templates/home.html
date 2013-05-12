@@ -5,12 +5,6 @@
   {% block head %}
     {{super()}}
     <!--For each plot, call the relevant plot function -->
-    {% for plot in plots %} 
-      <script>
-        var {{ 'plot' ~ (loop.index+1) ~ 'data'  }} = {{ plot.data }}
-
-      </script>  
-  {% endfor %}
   
   {% endblock %}
 </head>
@@ -25,44 +19,67 @@
   <div class="titlebar">
     <h3> The Epic Charts </h3>
   </div>
-  
+  <p>You can drag and drop charts to move them around, click for fullscreen, etc </p>
+
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="plot span4" draggable="true">
+      <p>Plot 1 title</p>
       <div id="plot1"> 
         <svg style="height: 200px; "></svg>
       </div> 
+      <a href="#" rel="lightbox" title="my caption">Full Screen</a>
       <button class="btn btn-info"> Show SQL</button>
       <code class="prettyprint">this is plot1; </code>
     </div>
     <div class="plot span4" draggable="true">
-      <div id="plot2"> </div>
+      <p>Plot 2 title</p>
+      <div id="plot2"> 
+        <svg style="height: 200px; "></svg>
+      </div> 
+      <a href="#" rel="lightbox" title="my caption">Full Screen</a>
       <button class="btn btn-info"> Show SQL</button>
       <code class="prettyprint">this is plot2; </code>
     </div>
     <div class="plot span4" draggable="true">
-      <div id="plot3"> </div>
+      <p>Plot 3 title</p>
+      <div id="plot3"> 
+        <svg style="height: 200px; "></svg>
+      </div> 
+      <a href="#" rel="lightbox" title="my caption">Full Screen</a>
       <button class="btn btn-info"> Show SQL</button>
-      <code class="prettyprint">this is plot3; </code>
+      <code class="prettyprint">this is plot1; </code>
     </div>
 
   
   </div>
   <div class="row-fluid">
     <div class="plot span4" draggable="true">
-      <div id="plot4"> </div>
+      <p>Plot 4 title</p>
+      <div id="plot4"> 
+        <svg style="height: 200px; "></svg>
+      </div> 
+      <a href="#" rel="lightbox" title="my caption">Full Screen</a>
       <button class="btn btn-info"> Show SQL</button>
-      <code class="prettyprint">this is plot4; </code>
+      <code class="prettyprint">this is plot1; </code>
     </div>
     <div class="plot span4" draggable="true">
-      <div id="plot5"> </div>
+      <p>Plot 5 title</p>
+      <div id="plot5"> 
+        <svg style="height: 200px; "></svg>
+      </div> 
+      <a href="#" rel="lightbox" title="my caption">Full Screen</a>
       <button class="btn btn-info"> Show SQL</button>
-      <code class="prettyprint">this is plot5; </code>
+      <code class="prettyprint">this is plot1; </code>
     </div>
     <div class="plot span4" draggable="true">
-      <div id="plot6"> </div>
+      <p>Plot 6 title</p>
+      <div id="plot6"> 
+        <svg style="height: 200px; "></svg>
+      </div> 
+      <a href="#" rel="lightbox" title="my caption">Full Screen</a>
       <button class="btn btn-info"> Show SQL</button>
-      <code class="prettyprint">this is plot6; </code>
+      <code class="prettyprint">this is plot1; </code>
     </div>
   </div>
   
@@ -77,14 +94,33 @@
 
   {% endblock %}
 
-
-
-
-
   {% block footer %}
     {{super()}}
     <script src="{{url_for('static', filename='js/my_charts.js')}}"></script>
+
+    {% for plot in plot_data %} 
+      <script>
+        nv.addGraph(function() {  
+          var chart = nv.models.lineChart();
+          chart.xAxis
+              .axisLabel('Time (ms)')
+              .tickFormat(d3.format(',r'));
+          chart.yAxis
+              .axisLabel('Voltage (v)')
+              .tickFormat(d3.format('.02f'));
+          d3.select('#plot{{loop.index}} svg')
+              .datum(sinAndCos())
+            .transition().duration(500)
+              .call(chart);
+              nv.utils.windowResize(function() { d3.select('#plot{{loop.index}} svg').call(chart) });
+          return chart;
+        });
+      </script>
+    {% endfor %}
   {% endblock %}
+
+
+
 
 </body>
 </html>
