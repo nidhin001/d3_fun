@@ -5,69 +5,69 @@ p1 = Plot(
     title='Plot 1',
     xlabel='xvar',
     ylabel='yvar',
-    query='select a,b from data',
-    num_series=1,
+    query='select a,b,c from data',
+    num_series=2,
     page='home',
-    graph_type='line',
+    graph_type='lineChart',
     xvar='a',
-    yvars='x,y,z'
+    yvars='b,c'
     )
-
 p2 = Plot(
-    title='Plot 1',
+    title='Plot 2',
     xlabel='xvar',
     ylabel='yvar',
-    query='select a,b from data',
-    num_series=1,
+    query='select a,x,y from data',
+    num_series=2,
     page='home',
-    graph_type='line',
+    graph_type='lineChart',
     xvar='a',
-    yvars='x,y,z'
+    yvars='x,y'
     )
 p3 = Plot(
-    title='Plot 1',
+    title='Plot 3',
     xlabel='xvar',
     ylabel='yvar',
-    query='select a,b from data',
+    query='select a,z from data',
     num_series=1,
     page='home',
-    graph_type='line',
+    graph_type='lineChart',
     xvar='a',
-    yvars='x,y,z'
+    yvars='z'
     )
 p4 = Plot(
-    title='Plot 1',
+    title='Plot 4',
     xlabel='xvar',
     ylabel='yvar',
     query='select a,b from data',
     num_series=1,
     page='home',
-    graph_type='line',
+    graph_type='lineChart',
     xvar='a',
-    yvars='x,y,z'
+    yvars='b'
     )
 p5 = Plot(
-    title='Plot 1',
+    title='Plot 5',
     xlabel='xvar',
     ylabel='yvar',
-    query='select a,b from data',
-    num_series=1,
+    query='select a,b,c from data',
+    num_series=2,
     page='home',
-    graph_type='line',
+    graph_type='lineChart',
     xvar='a',
-    yvars='x,y,z'
+    yvars='b,c'
     )
 p6 = Plot(
-    title='Plot 1',
+    title='Plot 6',
     xlabel='xvar',
     ylabel='yvar',
-    query='select a,b from data',
-    num_series=1,
+    query='select a,b,c from data',
+    num_series=2,
     page='home',
-    graph_type='line',
+    graph_type='lineChart',
     xvar='a',
-    yvars='x,y,z'
+    yvars='b,c'
     )
+
 
 
 

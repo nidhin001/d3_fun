@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text
 from database import Base
 import datetime
+import collections
 
 class Plot(Base):
   __tablename__ = 'plots'
@@ -27,11 +28,16 @@ class Plot(Base):
     self.graph_type = graph_type
     self.xvar = xvar
     self.yvars = yvars
-
-  def query(self, db_session):
-    res = db_session.execute(self.query)
-    self.data=res.fetchall()
+    
+  def exec_query(self, db_session):
+    result = db_session.execute(self.query)
+    self.data = collections.defaultdict(list)
+    for row in result:
+      for column, value in row.items():
+        self.data[column].append(value)
 
   def __repr__(self):
     return '<plot %r>' % self.id
 
+
+  
